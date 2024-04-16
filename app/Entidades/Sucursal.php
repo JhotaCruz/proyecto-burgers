@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Sucursal;
+namespace App\Entidades;
 
 use DB;
 use Illuminate\Database\Eloquent\Model;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Postulacion;
+namespace App\Entidades;
 
 use DB;
 use Illuminate\Database\Eloquent\Model;
