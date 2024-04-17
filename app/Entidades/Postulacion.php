@@ -28,12 +28,12 @@ class Postulacion extends Model
                   correo,
                   linkcv
 
-                FROM postulaciones ORDER BY titulo ASC";
+                FROM postulaciones ORDER BY nombre ASC";
         $lstRetorno = DB::select($sql);
         return $lstRetorno;
     }
 
-        public function obtenerPorId($idCliente)
+        public function obtenerPorId($idpostulacion)
     {
         $sql = "SELECT
                   idpostulacion,
@@ -42,7 +42,7 @@ class Postulacion extends Model
                   whatsapp,  
                   correo,
                   linkcv
-                FROM postulaciones WHERE idpostulacion = $idPostulacion";
+                FROM postulaciones WHERE idpostulacion = $idpostulacion";
         $lstRetorno = DB::select($sql);
 
         if (count($lstRetorno) > 0) {
@@ -58,13 +58,13 @@ class Postulacion extends Model
     }
 
     public function guardar() {
-        $sql = "UPDATE clientes SET
+        $sql = "UPDATE Postulaciones SET
             nombre='$this->nombre',
             apellido='$this->apellido',
             whatsapp='$this->whatsapp',
             correo='$this->correo',
             linkcv='$this->linkcv'
-            WHERE idproducto=?";
+            WHERE idpostulacion=?";
         $affected = DB::update($sql, [$this->idpostulacion]);
     }
 

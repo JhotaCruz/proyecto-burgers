@@ -73,8 +73,7 @@ class Cliente extends Model
 
     public function eliminar()
     {
-        $sql = "DELETE FROM clientes WHERE
-            idcliente=?";
+        $sql = "DELETE FROM clientes WHERE idcliente=?";
         $affected = DB::delete($sql, [$this->idcliente]);
     }
 

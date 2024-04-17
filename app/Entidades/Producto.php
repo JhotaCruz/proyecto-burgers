@@ -33,7 +33,7 @@ class Producto extends Model
         return $lstRetorno;
     }
 
-        public function obtenerPorId($idCliente)
+        public function obtenerPorId($idproducto)
     {
         $sql = "SELECT
                   idproducto,
@@ -43,7 +43,7 @@ class Producto extends Model
                   descripcion,
                   imagen,
                   fk_idtipoproducto
-                FROM productos WHERE idproducto = $idProducto";
+                FROM productos WHERE idproducto = $idproducto";
         $lstRetorno = DB::select($sql);
 
         if (count($lstRetorno) > 0) {
@@ -60,7 +60,7 @@ class Producto extends Model
     }
 
     public function guardar() {
-        $sql = "UPDATE clientes SET
+        $sql = "UPDATE Productos SET
             titulo='$this->titulo',
             precio='$this->precio,
             cantidad='$this->cantidad,

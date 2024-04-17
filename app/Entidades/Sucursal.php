@@ -33,7 +33,7 @@ class Sucursal extends Model
         return $lstRetorno;
     }
 
-        public function obtenerPorId($idCliente)
+        public function obtenerPorId($idsucursal)
     {
         $sql = "SELECT
                   idsucursal,
@@ -42,7 +42,7 @@ class Sucursal extends Model
                   telefono,  
                   mapa,
                   horario
-                FROM sucursales WHERE idsucursal = $idSucursal";
+                FROM sucursales WHERE idsucursal = $idsucursal";
         $lstRetorno = DB::select($sql);
 
         if (count($lstRetorno) > 0) {
@@ -58,13 +58,13 @@ class Sucursal extends Model
     }
 
     public function guardar() {
-        $sql = "UPDATE clientes SET
+        $sql = "UPDATE Sucursales SET
             nombre='$this->nombre',
             direccion='$this->direccion',
             telefono='$this->telefono',
             mapa='$this->mapa',
             horario='$this->horario'
-            WHERE idproducto=?";
+            WHERE idsucursal=?";
         $affected = DB::update($sql, [$this->idsucursal]);
     }
 
