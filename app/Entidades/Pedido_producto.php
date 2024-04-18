@@ -51,7 +51,7 @@ class Pedido_productos extends Model
     }
 
     public function guardar() {
-        $sql = "UPDATE pedidos SET
+        $sql = "UPDATE Pedido_productos SET
             fk_idproducto='$this->fk_idproducto',
             fk_idpedido='$this->fk_idpedido',
             
