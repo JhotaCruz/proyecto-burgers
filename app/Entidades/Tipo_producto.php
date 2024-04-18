@@ -47,7 +47,7 @@ class Tipo_producto extends Model
     }
 
     public function guardar() {
-        $sql = "UPDATE clientes SET
+        $sql = "UPDATE Tipo_producto SET
             nombre='$this->nombre',
           
             WHERE idtipoproducto=?";

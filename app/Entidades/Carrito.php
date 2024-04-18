@@ -63,7 +63,7 @@ class Carritos extends Model
 
     public function eliminar()
     {
-        $sql = "DELETE FROM sucursales WHERE idcarrito=?";
+        $sql = "DELETE FROM carritos WHERE idcarrito=?";
         $affected = DB::delete($sql, [$this->idcarrito]);
     }
 
