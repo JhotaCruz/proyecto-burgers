@@ -48,8 +48,7 @@ class Estado_pedido extends Model
 
     public function guardar() {
         $sql = "UPDATE estado_pedidos SET
-            nombre='$this->nombre',
-          
+            nombre='$this->nombre'
             WHERE idestadopedido=?";
         $affected = DB::update($sql, [$this->idestadopedido]);
     }
